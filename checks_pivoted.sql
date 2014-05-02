@@ -1,8 +1,9 @@
+ALTER PROCEDURE EXCH02_Checks_ClearDate
+
+AS 
+SET NOCOUNT ON;
 DECLARE @cols AS NVARCHAR(MAX)
-DECLARE @query AS NVARCHAR(MAX)
-DECLARE @StartDate AS DATE
-DECLARE @EndDate AS DATE
-DECLARE @VendID AS NVARCHAR(10)
+DECLARE @query AS NVARCHAR(MAX) 
 SELECT @cols = STUFF((SELECT ','+
 						QUOTENAME(FORMAT(DATEADD(m, 1, Paydate), 'MM/yyyy'))
 						FROM EHIP_Checks_New
@@ -21,6 +22,5 @@ MAX(ClearDate) FOR Paydate IN ('+ @cols+')
 ) 
 AS PivotTable;';
 execute(@query);
-
-
+;
 
