@@ -1,7 +1,6 @@
 USE [WA_LLAA]
 GO
 
-/****** Object:  View [dbo].[Housing_Progress_Log_Minutes_View]    Script Date: 7/25/2014 10:57:30 AM ******/
 SET ANSI_NULLS ON
 GO
 
